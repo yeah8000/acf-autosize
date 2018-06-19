@@ -1,0 +1,21 @@
+{
+  "name": "acf-autosize",
+  "version": "1.0.0",
+  "description": "A wordpress plugin to automatically resize wysiwyg and textarea fields in Advanced Custom Fields",
+  "main": "src/index.js",
+  "scripts": {
+    "dist": "gulp dist --env dist; npm run mu",
+    "dev": "gulp",
+    "mu": "node ./mu.js > ./acf-autosize-mu.php"
+  },
+  "keywords": [],
+  "author": "Moritz Jacobs @ Yeah",
+  "license": "MIT",
+  "dependencies": {
+    "autosize": "^4.0.2",
+    "handlebars": "^4.0.11"
+  },
+  "devDependencies": {
+    "mj-gulp-workflow": "^1.3.4"
+  }
+}
