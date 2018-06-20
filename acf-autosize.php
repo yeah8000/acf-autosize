@@ -8,7 +8,7 @@ Author: Moritz Jacobs @ Yeah
 Author URI: http://www.yeah.de
  */
 
-namespace Yeah;
+namespace YeahACFAutosize;
 
 class ACFAutosize {
 
