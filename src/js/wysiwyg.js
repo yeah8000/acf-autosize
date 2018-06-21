@@ -14,13 +14,13 @@ function editorAutoHeight(editor, minHeight = 200) {
 	$(editor.iframeElement).css("height", height);
 }
 
-function addSlugClass($field) {
+function addSlugAttr($field) {
 	const name = $field.attr("data-name");
 	const body = $("iframe", $field)
 		.contents()
 		.find("body");
 
-	body.addClass(`acf-wysiwyg-${name}`);
+	body.attr("data-wysiwyg-slug", name);
 }
 
 /**
@@ -33,7 +33,7 @@ acf.add_action("wysiwyg_tinymce_init", (editor, id, options, $field) => {
 
 	// add a slug class on all wysiwyg fiulds (for editor-styles.css)
 	editor.on("init", () => {
-		addSlugClass($field);
+		addSlugAttr($field);
 	});
 
 	// check for "autosize" class on the field
