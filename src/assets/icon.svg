@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<rect fill="#5ABBA9" width="512" height="512"/>
+<g>
+	<g>
+		<polyline fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="55,64.5 55,55 64.5,55 		"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" stroke-dasharray="18.1904755,18.1904755" x1="82.6904755" y1="55" x2="437.4047546" y2="55"/>
+		<polyline fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="446.5,55 456,55 456,64.5 		"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" stroke-dasharray="19.7692299,19.7692299" x1="456" y1="84.2692337" x2="456" y2="311.615387"/>
+		<polyline fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="456,321.5 456,331 446.5,331 		"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" stroke-dasharray="18.1904755,18.1904755" x1="428.3095093" y1="331" x2="73.5952377" y2="331"/>
+		<polyline fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="64.5,331 55,331 55,321.5 		"/>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" stroke-dasharray="19.7692299,19.7692299" x1="55" y1="301.7307739" x2="55" y2="74.384613"/>
+	</g>
+</g>
+<path fill="#FFFFFF" d="M395.7558594,303.6820679c-2.084137-3.2440186-3.0119019-9.0380249-3.7078857-13.9040833h-0.4619446
+	C386.0237732,297.8880615,376.5218506,306,361.2259521,306C337.3558655,306,326,288.618103,326,266.8341064
+	c0-24.102005,19.2359619-41.947876,65.1217651-41.947876v-5.0980988c0-13.9039917-4.8658752-23.4059906-17.8458862-23.4059906
+	c-10.8919983,0-19.2340088,9.2700653-23.1740723,17.8440247l-17.8439331-21.3200073
+	c13.2102051-15.9919128,30.1260071-22.7119293,46.3500671-22.7119293c22.941925,0,42.6417542,15.2959137,42.6417542,53.0699768
+	v60.9498749c0,6.7219543,0.6940918,13.210022,3.708313,19.4679871H395.7558594z M391.1217651,245.9761353
+	c-20.3939209-0.9261017-36.6160278,6.0259399-36.6160278,20.8579712c0,9.9640503,6.0242004,14.8319397,12.9780884,14.8319397
+	c14.8320312,0,23.6379395-12.7460327,23.6379395-27.8099213V245.9761353z"/>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" stroke-dasharray="19,19" x1="256" y1="188.4294434" x2="256" y2="471.5705566"/>
+		<g>
+			<polygon fill="#FFFFFF" points="239.0469055,208.3480072 256,191.3849945 272.9530945,208.3480072 272.9530945,193.9530029 
+				256,177 239.0469055,193.9530029 			"/>
+		</g>
+		<g>
+			<polygon fill="#FFFFFF" points="239.0469055,451.6520081 256,468.6149902 272.9530945,451.6520081 272.9530945,466.0469971 
+				256,483 239.0469055,466.0469971 			"/>
+		</g>
+	</g>
+</g>
+</svg>

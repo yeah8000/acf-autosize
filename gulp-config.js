@@ -112,15 +112,15 @@ module.exports = {
 			]
 		},
 		images: {
-			"./public/img/": [
-				"./src/img/**/*.jpeg",
-				"./src/img/**/*.jpg",
-				"./src/img/**/*.png",
-				"./src/img/**/*.gif"
+			"./public/assets/": [
+				"./src/assets/**/*.jpeg",
+				"./src/assets/**/*.jpg",
+				"./src/assets/**/*.png",
+				"./src/assets/**/*.gif"
 			]
 		},
 		svg: {
-			"./public/img/": ["./src/img/**/*.svg"]
+			"./public/assets/": ["./src/assets/**/*.svg"]
 		},
 		copy: {
 			"./public/fonts/": ["./src/fonts/**/*.*"],
