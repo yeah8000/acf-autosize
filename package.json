@@ -6,7 +6,8 @@
   "scripts": {
     "dist": "gulp dist --env dist; npm run mu",
     "dev": "gulp",
-    "mu": "node ./mu.js > ./acf-autosize-mu.php"
+    "mu": "node ./.scripts/mu.js > ./acf-autosize-mu.php",
+    "deploy": "./.scripts/deploy.sh"
   },
   "keywords": [],
   "author": "Moritz Jacobs @ Yeah",
