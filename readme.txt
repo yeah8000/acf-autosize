@@ -50,6 +50,7 @@ body[data-wysiwyg-slug="my-wysiwyg-field"] {
 - Run dev watcher: `npm run dev`
 - Distribution: `npm run dist`
 - Compile mu-plugin: `npm run mu`
+- deploy to wordpress.org: `npm run deploy`
 
 == Installation ==
 
