@@ -69,6 +69,7 @@ svn rm $SVNPATH/trunk/*
 
 echo "Exporting the HEAD of master from git to the trunk of SVN"
 git checkout-index -a -f --prefix=$SVNPATH/trunk/
+cp ./public/assets/* $SVNPATH/assets
 
 echo "Ignoring github specific files and deployment script"
 svn propset svn:ignore "deploy.sh

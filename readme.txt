@@ -5,7 +5,7 @@ Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
 Tested up to: 4.9.9
 Requires PHP: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -33,6 +33,9 @@ A wordpress plugin to automatically resize wysiwyg and textarea fields in Advanc
 Install and activate like any other wordpress plugin
 
 == Changelog ==
+
+= 1.0.2 =
+* Added banner and icons
 
 = 1.0.1 =
 * First release
