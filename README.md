@@ -38,7 +38,7 @@ body[data-wysiwyg-slug="my-wysiwyg-field"] {
 - Run dev watcher: `npm run dev`
 - Distribution: `npm run dist`
 - Compile mu-plugin: `npm run mu`
-- deploy to wordpress.org: `npm run deploy`
+- deploy to wordpress.org: `npm run deploy your-username`
 
 ### Versions need a bump in:
 - 2 × `acf-autosize.php`
