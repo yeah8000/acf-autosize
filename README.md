@@ -43,7 +43,6 @@ body[data-wysiwyg-slug="my-wysiwyg-field"] {
 ### Versions need a bump in:
 - 2 × `acf-autosize.php`
 - 1 × `package.json`
-- 2 × `src/acf-autosize-mu.hbs`
 - 1 × `readme.txt` + Changelog!
 
 … and don't forget to `npm run dist`
