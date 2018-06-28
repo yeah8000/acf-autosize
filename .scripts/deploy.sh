@@ -1,4 +1,12 @@
 #! /bin/bash
+#
+SVNUSER=$1 # your svn username
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied. Abort."
+    exit 1
+fi
+
 # A modification of Dean Clatworthy's deploy script as found here: https://github.com/deanc/wordpress-plugin-git-svn
 # The difference is that this script lives in the plugin's git repo & doesn't require an existing SVN repo.
 
@@ -13,13 +21,12 @@ GITPATH="$CURRENTDIR" # this file should be in the base of your git repository
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
 SVNURL="http://plugins.svn.wordpress.org/acf-autosize/" # Remote SVN repo on wordpress.org, with trailing slash
-SVNUSER="yeah8000" # your svn username
-
 
 # Let's begin...
 echo ".........................................."
 echo 
 echo "Preparing to deploy wordpress plugin"
+echo "User: $1"
 echo 
 echo ".........................................."
 echo 

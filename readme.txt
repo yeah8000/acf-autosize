@@ -5,15 +5,13 @@ Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
 Tested up to: 4.9.9
 Requires PHP: 7.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields
 
 == Description ==
-
-Check out the source code and full documentation [on Github!](https://github.com/yeah8000/acf-autosize)
 
 ## Features
 - Automatically resize wysiwyg and textarea fields in ACF groups
@@ -30,11 +28,7 @@ Check out the source code and full documentation [on Github!](https://github.com
 
 ## Development
 
-- Install build tools: `npm install`
-- Run dev watcher: `npm run dev`
-- Distribution: `npm run dist`
-- Compile mu-plugin: `npm run mu`
-- deploy to wordpress.org: `npm run deploy`
+Check out the source code [on Github!](https://github.com/yeah8000/acf-autosize)
 
 == Installation ==
 
