@@ -1,1 +1,1 @@
-require("mj-gulp-workflow")(require("gulp"));
+require('mj-gulp-workflow')(require('gulp'))

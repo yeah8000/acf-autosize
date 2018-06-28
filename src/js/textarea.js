@@ -1,6 +1,6 @@
-const autosize = require("autosize");
+const autosize = require('autosize');
 
 ($ => {
-	const textareas = $(".acf-field.autosize textarea");
-	autosize(textareas);
-})(jQuery);
+	const textareas = $('.acf-field.autosize textarea')
+	autosize(textareas)
+})(window.jQuery)

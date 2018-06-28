@@ -1,16 +1,16 @@
-const imagemin = require("gulp-imagemin");
-const browserlist = ["> 0.1%"];
+const imagemin = require('gulp-imagemin')
+const browserlist = ['> 0.1%']
 
 module.exports = {
 	css: {
 		scss: {
 			config: {
-				outputStyle: "compressed" // nested, compact, expanded and compressed are available options
+				outputStyle: 'compressed' // nested, compact, expanded and compressed are available options
 			}
 		},
 
 		sourcemaps: {
-			enabled: "dev"
+			enabled: 'dev'
 		},
 
 		autoprefixer: {
@@ -23,14 +23,14 @@ module.exports = {
 		cleanCss: {
 			enabled: true,
 			config: {
-				compatibility: "ie8"
+				compatibility: 'ie8'
 			}
 		}
 	},
 
 	js: {
 		sourcemaps: {
-			enabled: "dev"
+			enabled: 'dev'
 		},
 		browserify: {
 			enabled: false
@@ -47,7 +47,7 @@ module.exports = {
 
 	es6: {
 		sourcemaps: {
-			enabled: "dev"
+			enabled: 'dev'
 		},
 		browserify: {
 			enabled: true
@@ -59,7 +59,7 @@ module.exports = {
 				minified: false,
 				presets: [
 					[
-						"env",
+						'env',
 						{
 							targets: {
 								browsers: browserlist
@@ -72,8 +72,8 @@ module.exports = {
 	},
 
 	clean: {
-		enabled: "dist",
-		paths: ["./public/**/*.map", "./src/tmp"]
+		enabled: 'dist',
+		paths: ['./public/**/*.map', './src/tmp']
 	},
 
 	images: {
@@ -98,48 +98,48 @@ module.exports = {
 	paths: {
 		// "DESTINATION" : ['SOURCE']
 		css: {
-			"./public/css/": ["./src/scss/**/*.scss"]
+			'./public/css/': ['./src/scss/**/*.scss']
 		},
 		es6: {
-			"./src/tmp/es6-bundle.js": ["./src/js/index.js"]
+			'./src/tmp/es6-bundle.js': ['./src/js/index.js']
 		},
 		es6Watch: {
-			"./src/tmp/es6-bundle.js": ["./src/js/**/*.js"]
+			'./src/tmp/es6-bundle.js': ['./src/js/**/*.js']
 		},
 		js: {
-			"./public/acf-autosize.js": [
-				"./src/tmp/es6-bundle.js"
+			'./public/acf-autosize.js': [
+				'./src/tmp/es6-bundle.js'
 			]
 		},
 		images: {
-			"./public/assets/": [
-				"./src/assets/**/*.jpeg",
-				"./src/assets/**/*.jpg",
-				"./src/assets/**/*.png",
-				"./src/assets/**/*.gif"
+			'./public/assets/': [
+				'./src/assets/**/*.jpeg',
+				'./src/assets/**/*.jpg',
+				'./src/assets/**/*.png',
+				'./src/assets/**/*.gif'
 			]
 		},
 		svg: {
-			"./public/assets/": ["./src/assets/**/*.svg"]
+			'./public/assets/': ['./src/assets/**/*.svg']
 		},
 		copy: {
-			"./public/fonts/": ["./src/fonts/**/*.*"],
-			"./public/favicons/": ["./src/favicons/**/*.*"]
+			'./public/fonts/': ['./src/fonts/**/*.*'],
+			'./public/favicons/': ['./src/favicons/**/*.*']
 		}
 	},
 
 	// All tasks above are available (css, js, images and svg)
 	combinedTasks: {
-		default: [["dist", "watch"]],
-		dist: ["es6", "js", "images", "svg", "css", "copy", "clean"],
+		default: [['dist', 'watch']],
+		dist: ['es6', 'js', 'images', 'svg', 'css', 'copy', 'clean']
 	},
 
 	watchTask: {
-		images: ["images"],
-		svg: ["svg"],
-		css: ["css"],
-		es6Watch: ["es6"],
-		js: ["js"],
-		copy: ["copy"]
+		images: ['images'],
+		svg: ['svg'],
+		css: ['css'],
+		es6Watch: ['es6'],
+		js: ['js'],
+		copy: ['copy']
 	}
-};
+}

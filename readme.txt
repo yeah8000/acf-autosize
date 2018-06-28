@@ -5,7 +5,7 @@ Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
 Tested up to: 4.9.9
 Requires PHP: 7.0
-Stable tag: 1.0.4a
+Stable tag: 1.1.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -41,6 +41,10 @@ Check out the source code and full documentation [on Github!](https://github.com
 Install and activate like any other wordpress plugin
 
 == Changelog ==
+
+= 1.1.0 =
+* Make tinymce toolbars sticky
+* Fix bug with double plugin activation
 
 = 1.0.4 =
 * Fix README

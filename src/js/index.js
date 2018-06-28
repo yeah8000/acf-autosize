@@ -1,6 +1,4 @@
-($ => {
-	if (typeof acf !== "undefined") {
-		require("./textarea");
-		require("./wysiwyg");
-	}
-})(jQuery);
+if (typeof acf !== 'undefined') {
+	require('./textarea')
+	require('./wysiwyg')
+}
