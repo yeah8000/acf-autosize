@@ -22,6 +22,9 @@ class ACFAutosize {
 	public function enqueue() {
 		wp_register_script('acf-autosize-js', plugins_url("public/acf-autosize.js", __FILE__), false, $this->version);
 		wp_enqueue_script('acf-autosize-js');
+
+		wp_register_style('acf-autosize-css', plugins_url("public/acf-autosize.css", __FILE__), false, $this->version);
+		wp_enqueue_style('acf-autosize-css');
 	}
 }
 

@@ -16,9 +16,15 @@ const commentHeader = `/*\n${comment[1].trim()}\n*/`
 
 // load compiled js file
 let autosizeJs = fs.readFileSync(path.join(process.cwd(), 'public', 'acf-autosize.js'), 'utf-8')
+let autosizeCss = fs.readFileSync(path.join(process.cwd(), 'public', 'acf-autosize.css'), 'utf-8')
 
 // escape $, single and double quotes
 autosizeJs = autosizeJs
+	.replace(/'/g, "\\'")
+	.replace(/"/g, '\\"')
+	.replace(/\$/g, '\\$')
+
+autosizeCss = autosizeCss
 	.replace(/'/g, "\\'")
 	.replace(/"/g, '\\"')
 	.replace(/\$/g, '\\$')
@@ -28,7 +34,7 @@ const hbs = fs.readFileSync(path.join(process.cwd(), 'src', 'acf-autosize-mu.hbs
 
 // compile php file
 const template = handlebars.compile(hbs)
-const html = template({ autosizeJs, commentHeader })
+const html = template({ autosizeJs, autosizeCss, commentHeader })
 
 // echo compilation
 console.log(html)

@@ -10,7 +10,7 @@ module.exports = {
 		},
 
 		sourcemaps: {
-			enabled: 'dev'
+			enabled: false
 		},
 
 		autoprefixer: {
@@ -98,7 +98,7 @@ module.exports = {
 	paths: {
 		// "DESTINATION" : ['SOURCE']
 		css: {
-			'./public/css/': ['./src/scss/**/*.scss']
+			'./public/': ['./src/scss/**/*.scss']
 		},
 		es6: {
 			'./src/tmp/es6-bundle.js': ['./src/js/index.js']

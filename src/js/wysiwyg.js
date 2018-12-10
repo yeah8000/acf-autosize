@@ -14,17 +14,6 @@
 		height = height < minHeight ? minHeight : height
 		$(editor.iframeElement).css('height', height)
 	}
-	/**
-	 * stick the toolbar underneath the wordpress toolbar
-	 * @param  {object} $field the acf field as a jQuery object
-	 * @return {void}
-	 */
-	function stickyToolbar ($field) {
-		$field.find('.mce-top-part').css({
-			position: 'sticky',
-			top: 30
-		})
-	}
 
 	/**
 	 * add the acf field's name slug a data-attribute to the iframe body
@@ -45,7 +34,6 @@
 	window.acf.add_action('wysiwyg_tinymce_init', (editor, id, options, $field) => {
 		const eventHandler = () => {
 			editorAutoHeight(editor)
-			stickyToolbar($field)
 		}
 
 		// add a slug class on all wysiwyg fiulds (for editor-styles.css)
