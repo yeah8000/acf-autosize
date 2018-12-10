@@ -5,7 +5,7 @@ Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
 Tested up to: 5.0.0
 Requires PHP: 7.0
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,7 +36,7 @@ Install and activate like any other wordpress plugin
 
 == Changelog ==
 
-= 1.2.0 =
+= 1.2.1 =
 * Fix issue with Wordpress 5.0 and Gutenberg
 
 = 1.1.2 =
