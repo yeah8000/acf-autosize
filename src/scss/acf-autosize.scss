@@ -1,5 +1,9 @@
 .autosize .mce-top-part {
 	position: -webkit-sticky;
-	position: 'sticky';
+	position: "sticky";
 	top: 30px;
+
+	.block-editor & {
+		top: 0;
+	}
 }
