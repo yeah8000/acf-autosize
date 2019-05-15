@@ -23,6 +23,15 @@ class ACFAutosize {
 		wp_register_script('acf-autosize-js', plugins_url("public/acf-autosize.js", __FILE__), false, $this->version);
 		wp_enqueue_script('acf-autosize-js');
 
+    $js_settings = array(
+      'wysiwyg' => array(
+        // make the min-height of WYSIWYG fields filterable:
+        'minHeight' => apply_filters('acf-autosize/wysiwyg/min-height', 200)
+      )
+    );
+
+    wp_localize_script('acf-autosize-js', 'ACFAutosize', $js_settings);
+
 		wp_register_style('acf-autosize-css', plugins_url("public/acf-autosize.css", __FILE__), false, $this->version);
 		wp_enqueue_style('acf-autosize-css');
 	}
