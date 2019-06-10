@@ -12,7 +12,10 @@
 				.find('html')
 				.height() || minHeight
 		height = height < minHeight ? minHeight : height
-		$(editor.iframeElement).css('height', height)
+		$(editor.iframeElement).css({
+      height: height,
+      minHeight: minHeight
+    })
 	}
 
 	/**
@@ -33,7 +36,7 @@
 	 */
 	window.acf.add_action('wysiwyg_tinymce_init', (editor, id, options, $field) => {
 		const eventHandler = () => {
-			editorAutoHeight(editor)
+			editorAutoHeight(editor, ACFAutosize.wysiwyg.minHeight)
 		}
 
 		// add a slug class on all wysiwyg fiulds (for editor-styles.css)
