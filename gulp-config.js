@@ -10,13 +10,13 @@ module.exports = {
 		},
 
 		sourcemaps: {
-			enabled: false
+			enabled: 'dev'
 		},
 
 		autoprefixer: {
 			enabled: true,
 			config: {
-				browsers: browserlist
+				browserlist: browserlist
 			}
 		},
 
@@ -33,33 +33,17 @@ module.exports = {
 			enabled: 'dev'
 		},
 		browserify: {
-			enabled: false
-		},
-
-		babeljs: {
-			enabled: true,
-			config: {
-				minified: true,
-				comments: false
-			}
-		}
-	},
-
-	es6: {
-		sourcemaps: {
-			enabled: 'dev'
-		},
-		browserify: {
 			enabled: true
 		},
 
 		babeljs: {
 			enabled: true,
 			config: {
-				minified: false,
+				minified: true,
+				comments: false,
 				presets: [
 					[
-						'env',
+						'@babel/preset-env',
 						{
 							targets: {
 								browsers: browserlist
@@ -100,16 +84,13 @@ module.exports = {
 		css: {
 			'./public/': ['./src/scss/**/*.scss']
 		},
-		es6: {
-			'./src/tmp/es6-bundle.js': ['./src/js/index.js']
-		},
-		es6Watch: {
-			'./src/tmp/es6-bundle.js': ['./src/js/**/*.js']
-		},
 		js: {
 			'./public/acf-autosize.js': [
-				'./src/tmp/es6-bundle.js'
+				'./src/js/index.js'
 			]
+		},
+		jsWatch: {
+			0: ['./src/js/**/*.js']
 		},
 		images: {
 			'./public/assets/': [
@@ -130,16 +111,15 @@ module.exports = {
 
 	// All tasks above are available (css, js, images and svg)
 	combinedTasks: {
-		default: [['dist', 'watch']],
-		dist: ['es6', 'js', 'images', 'svg', 'css', 'copy', 'clean']
+		dist: ['js', 'images', 'svg', 'css', 'copy', 'clean'],
+		default: [['dist', 'watch']]
 	},
 
 	watchTask: {
 		images: ['images'],
 		svg: ['svg'],
 		css: ['css'],
-		es6Watch: ['es6'],
-		js: ['js'],
+		jsWatch: ['js'],
 		copy: ['copy']
 	}
 }
