@@ -17,6 +17,9 @@ class ACFAutosizeMu {
 
 	public function echoJs() {
 		echo "<script type=\"text/javascript\">";
+		echo "ACFAutosize = {'wysiwyg':{'minHeight': ".apply_filters('acf-autosize/wysiwyg/min-height', 200)."}};";
+		echo "</script>";
+		echo "<script type=\"text/javascript\">";
 		echo "{{{ autosizeJs }}}";
 		echo "</script>";
 	}

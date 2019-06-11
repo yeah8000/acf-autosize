@@ -18,12 +18,13 @@ const commentHeader = `/*\n${comment[1].trim()}\n*/`
 let autosizeJs = fs.readFileSync(path.join(process.cwd(), 'public', 'acf-autosize.js'), 'utf-8')
 let autosizeCss = fs.readFileSync(path.join(process.cwd(), 'public', 'acf-autosize.css'), 'utf-8')
 
-// escape $, single and double quotes
+// escape $ and double quotes
+// do not escape single quotes, as this leads to a "invalid escape sequence" - error
 autosizeJs = autosizeJs
-	.replace(/'/g, "\\'")
 	.replace(/"/g, '\\"')
 	.replace(/\$/g, '\\$')
 
+// escape $ and double quotes
 autosizeCss = autosizeCss
 	.replace(/'/g, "\\'")
 	.replace(/"/g, '\\"')
