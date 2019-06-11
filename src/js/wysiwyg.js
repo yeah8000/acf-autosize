@@ -13,9 +13,9 @@
 				.height() || minHeight
 		height = height < minHeight ? minHeight : height
 		$(editor.iframeElement).css({
-      height: height,
-      minHeight: minHeight
-    })
+			height: height,
+			minHeight: minHeight
+		})
 	}
 
 	/**
