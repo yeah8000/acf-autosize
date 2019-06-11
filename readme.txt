@@ -3,9 +3,9 @@ Contributors: yeah8000
 Donate link: https://yeah.de/
 Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
-Tested up to: 5.0
+Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 1.2.3
+Stable tag: 1.3.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,6 +21,7 @@ A wordpress plugin to automatically resize and improve upon wysiwyg and textarea
 - Install and activate like any other wordpress plugin
 - `[data-wysiwyg-slug]` is added to *every* wysiwyg field!
 - Add `autosize` as a class to a WYSIWYG or Textarea-Field to enable autosize for this field
+- Set `min-height` of WYSIWYG-fields via `acf-autosize/wysiwyg/min-height`-filter. 
 - that's basically it.
 
 ## mu-plugin
@@ -35,6 +36,10 @@ Check out the source code [on Github!](https://github.com/yeah8000/acf-autosize)
 Install and activate like any other wordpress plugin
 
 == Changelog ==
+
+= 1.3.0 =
+* Add `acf-autosize/wysiwyg/min-height`-filter to set min-height of wysiwyg-fields
+* Update dependencies to fix security issues
 
 = 1.2.3 =
 * Fix issue with Wordpress 5.0 and Gutenberg

@@ -23,6 +23,18 @@ body[data-wysiwyg-slug="my-wysiwyg-field"] {
 }
 ```
 
+- Set `min-height` of WYSIWYG-fields via `acf-autosize/wysiwyg/min-height`-filter. 
+
+```php
+// functions.php
+
+add_filter('acf-autosize/wysiwyg/min-height', function() {
+	return 200;
+});
+
+```
+
+
 ## Usage
 - Install and activate like any other wordpress plugin
 - `[data-wysiwyg-slug]` is added to *every* wysiwyg field!
