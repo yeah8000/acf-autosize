@@ -21,7 +21,7 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-watch": "^4.0.0",
-    "mj-gulp-workflow": "^2.0.7",
+    "mj-gulp-workflow": "^2.1.1",
     "standard": "^11.0.1"
   }
 }
