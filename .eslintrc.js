@@ -11,6 +11,7 @@ module.exports = {
 		'no-tabs': 0
 	},
 	globals: {
-		ACFAutosize: false
+		ACFAutosize: false,
+		acf: false
 	}
 }
