@@ -67,7 +67,7 @@ module.exports = {
 				imagemin.gifsicle({ interlaced: true }),
 				imagemin.jpegtran({ progressive: true }),
 				imagemin.optipng({ optimizationLevel: 5 }),
-				imagemin.svgo({ plugins: [{ removeViewBox: true }] })
+				imagemin.svgo({})
 			]
 		}
 	},
@@ -85,33 +85,30 @@ module.exports = {
 			'./public/': ['./src/scss/**/*.scss']
 		},
 		js: {
-			'./public/acf-autosize.js': [
-				'./src/js/index.js'
-			]
+			'./public/acf-autosize.js': ['./src/js/index.js']
 		},
 		jsWatch: {
 			0: ['./src/js/**/*.js']
+		},
+		jsConcat: {
 		},
 		images: {
 			'./public/assets/': [
 				'./src/assets/**/*.jpeg',
 				'./src/assets/**/*.jpg',
 				'./src/assets/**/*.png',
-				'./src/assets/**/*.gif'
+				'./src/assets/**/*.gif',
+				'./src/assets/**/*.ico'
 			]
 		},
 		svg: {
 			'./public/assets/': ['./src/assets/**/*.svg']
-		},
-		copy: {
-			'./public/fonts/': ['./src/fonts/**/*.*'],
-			'./public/favicons/': ['./src/favicons/**/*.*']
 		}
 	},
 
 	// All tasks above are available (css, js, images and svg)
 	combinedTasks: {
-		dist: ['js', 'images', 'svg', 'css', 'copy', 'clean'],
+		dist: ['js', 'images', 'svg', 'css', 'clean'],
 		default: [['dist', 'watch']]
 	},
 
@@ -119,7 +116,6 @@ module.exports = {
 		images: ['images'],
 		svg: ['svg'],
 		css: ['css'],
-		jsWatch: ['js'],
-		copy: ['copy']
+		jsWatch: ['js']
 	}
 }

@@ -16,12 +16,15 @@
   "license": "MIT",
   "dependencies": {
     "autosize": "^4.0.2",
-    "handlebars": "^4.1.2"
+    "handlebars": "^4.5.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-watch": "^4.0.0",
-    "mj-gulp-workflow": "^2.1.1",
-    "standard": "^11.0.1"
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.18.1",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "mj-gulp-workflow": "^2.1.3"
   }
 }
