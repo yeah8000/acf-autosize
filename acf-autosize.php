@@ -2,8 +2,8 @@
 /*
 Plugin Name: ACF Autosize
 Plugin URI: https://wordpress.org/plugins/acf-autosize/
-Description: A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields. <strong>Please note: Version 2 will automatically apply autosize to all fields. It will be possible to deactivate autosizing via class though.</strong>
-Version: 1.3.3
+Description: A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields.
+Version: 2.0.0
 Author: Moritz Jacobs @ Yeah
 Author URI: https://www.yeah.de
  */
@@ -12,7 +12,7 @@ namespace YeahACFAutosize;
 
 class ACFAutosize {
 
-	public $version = "1.3.3";
+	public $version = "2.0.0";
 
 	public function __construct() {
 		// enqueue javascript
@@ -23,11 +23,13 @@ class ACFAutosize {
 		wp_register_script('acf-autosize-js', plugins_url("public/acf-autosize.js", __FILE__), false, $this->version);
 		wp_enqueue_script('acf-autosize-js');
 
+		// make the min-height of WYSIWYG fields filterable
+		// enable autosizing by default
 		$js_settings = array(
 			'wysiwyg' => array(
-				// make the min-height of WYSIWYG fields filterable:
-				'minHeight' => apply_filters('acf-autosize/wysiwyg/min-height', 200),
+				'minHeight' => apply_filters('acf-autosize/wysiwyg/min-height', 200)
 			),
+			'enabledByDefault' => apply_filters('acf-autosize/enabledByDefault', true)
 		);
 
 		wp_localize_script('acf-autosize-js', 'ACFAutosize', $js_settings);

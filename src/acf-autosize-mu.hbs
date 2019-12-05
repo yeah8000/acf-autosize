@@ -17,7 +17,10 @@ class ACFAutosizeMu {
 
 	public function echoJs() {
 		echo "<script type=\"text/javascript\">";
-		echo "ACFAutosize = {'wysiwyg':{'minHeight': ".apply_filters('acf-autosize/wysiwyg/min-height', 200)."}};";
+		echo "ACFAutosize = {";
+		echo "'wysiwyg':{'minHeight': ".apply_filters('acf-autosize/wysiwyg/min-height', 200)."},";
+		echo "'enabledByDefault':".apply_filters('acf-autosize/enabledByDefault', true);
+		echo "};";
 		echo "</script>";
 		echo "<script type=\"text/javascript\">";
 		echo "{{{ autosizeJs }}}";

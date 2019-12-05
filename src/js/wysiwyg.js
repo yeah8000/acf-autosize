@@ -45,7 +45,13 @@
 		})
 
 		// check for "autosize" class on the field
-		const doAutosize = $field.hasClass('autosize')
+		let doAutosize = false
+
+		if (ACFAutosize.enabledByDefault) {
+			doAutosize = !$field.hasClass('no-autosize')
+		} else {
+			doAutosize = $field.hasClass('autosize')
+		}
 		if (!doAutosize) {
 			return
 		}
