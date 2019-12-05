@@ -49,8 +49,8 @@ add_filter('acf-autosize/enabledByDefault', function() {
 ## Usage
 - Install and activate like any other wordpress plugin
 - `[data-wysiwyg-slug]` is added to *every* wysiwyg field!
-- plugin ist enabled by default on all textareas and wysiwyg fields. You can disable it by adding the class `no-autosize` to a field.
-- You can set the enabled default to false via the `acf-autosize/enabledByDefault`-filter. After that you can reenable single fields by adding the class `autosize`.
+- The plugin is enabled by default on all textareas and wysiwyg fields. You can disable it by adding the class `no-autosize` to a field.
+- You can set the the default behaviour to false via the `acf-autosize/enabledByDefault`-filter. After that you can reenable single fields by adding the class `autosize`.
 - Set `min-height` of WYSIWYG-fields via `acf-autosize/wysiwyg/min-height`-filter. 
 
 
