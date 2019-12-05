@@ -1,9 +1,30 @@
-.autosize .mce-top-part {
+@mixin sticky-toolbar(){
 	position: -webkit-sticky;
 	position: "sticky";
-	top: 30px;
+	top: 46px;
 
-	.block-editor & {
+	@media(min-width: 783px){
+		top: 30px;
+	}
+}
+
+body.acf-autosize-enabled{
+	.acf-field:not(.no-autosize) .mce-top-part {
+		@include sticky-toolbar();
+	}
+
+	.block-editor .acf-field:not(.no-autosize) .mce-top-part {
 		top: 0;
 	}
 }
+
+.acf-field.autosize .mce-top-part {
+	@include sticky-toolbar();
+}
+
+.block-editor .acf-field.autosize .mce-top-part{
+	top: 0;
+}
+
+
+

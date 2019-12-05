@@ -1,7 +1,14 @@
 const autosize = require('autosize');
 
 ($ => {
-	const textareas = $('.acf-field.autosize textarea')
+	let textareas
+
+	if (ACFAutosize.enabledByDefault) {
+		textareas = $('.acf-field:not(.no-autosize) textarea')
+	} else {
+		textareas = $('.acf-field.autosize textarea')
+	}
+
 	autosize(textareas)
 
 	// safety first: update on ready and load.
@@ -14,7 +21,15 @@ const autosize = require('autosize');
 
 	// init autosize on newly created repeater/flexcontent fields
 	acf.add_action('append', function ($el) {
-		let textarea = $el.find('.acf-field.autosize textarea')
-		autosize(textarea)
+		let textarea = null
+		if (ACFAutosize.enabledByDefault) {
+			textarea = $el.find('.acf-field:not(.no-autosize) textarea')
+		} else {
+			textarea = $el.find('.acf-field.autosize textarea')
+		}
+
+		if (textarea.length > 0) {
+			autosize(textarea)
+		}
 	})
 })(window.jQuery)
