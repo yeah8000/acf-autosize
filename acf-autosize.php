@@ -3,23 +3,26 @@
 Plugin Name: ACF Autosize
 Plugin URI: https://wordpress.org/plugins/acf-autosize/
 Description: A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields.
-Version: 2.0.0
+Version: 2.0.1
 Author: Moritz Jacobs @ Yeah
 Author URI: https://www.yeah.de
  */
 
 namespace YeahACFAutosize;
 
-class ACFAutosize {
+class ACFAutosize
+{
 
-	public $version = "2.0.0";
+	public $version = "2.0.1";
 
-	public function __construct() {
+	public function __construct()
+	{
 		// enqueue javascript
 		add_action('acf/input/admin_footer', array($this, "enqueue"));
 	}
 
-	public function enqueue() {
+	public function enqueue()
+	{
 		wp_register_script('acf-autosize-js', plugins_url("public/acf-autosize.js", __FILE__), false, $this->version);
 		wp_enqueue_script('acf-autosize-js');
 
