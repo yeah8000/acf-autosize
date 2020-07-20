@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "autosize": "^4.0.2",
-    "handlebars": "^4.5.1"
+    "handlebars": "^4.7.6"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
