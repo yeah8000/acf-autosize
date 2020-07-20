@@ -34,8 +34,8 @@
 	/**
 	 * acf.tinymce hook
 	 */
-	window.acf.add_action('wysiwyg_tinymce_init', (editor, id, options, $field) => {
-		const eventHandler = () => {
+	acf.add_action('wysiwyg_tinymce_init', (editor, id, options, $field) => {
+		const setAutoHeight = () => {
 			editorAutoHeight(editor, ACFAutosize.wysiwyg.minHeight)
 		}
 
@@ -56,8 +56,26 @@
 			return
 		}
 
-		editor.on('init', eventHandler)
-		editor.on('change', eventHandler)
-		$(window).resize(eventHandler)
+		/**
+		 * set height on various occasions
+		 */
+		editor.on('init', setAutoHeight)
+		editor.on('change', setAutoHeight)
+
+		acf.add_action('load resize', () => {
+			setAutoHeight()
+		})
+
+		acf.add_action('show_field', () => {
+			// wait a moment until the field is really open
+			setTimeout(() => {
+				setAutoHeight()
+			}, 750)
+		})
+
+		// wait a moment until all controls are loaded, fonts are loaded and resize again
+		setTimeout(() => {
+			setAutoHeight()
+		}, 1000)
 	})
 })(window.jQuery)

@@ -11,12 +11,16 @@ const autosize = require('autosize');
 
 	autosize(textareas)
 
-	// safety first: update on ready and load.
-	$(document).ready(() => {
+	// auto size text-areas on various occasions
+	acf.add_action('ready load', () => {
 		autosize.update(textareas)
 	})
-	$(window).on('load', () => {
-		autosize.update(textareas)
+
+	acf.add_action('show_field', () => {
+		// wait a moment until the field is really open
+		setTimeout(() => {
+			autosize.update(textareas)
+		}, 750)
 	})
 
 	// init autosize on newly created repeater/flexcontent fields
