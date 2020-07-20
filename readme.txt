@@ -5,7 +5,7 @@ Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
 Tested up to: 5.3.0
 Requires PHP: 7.0
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
