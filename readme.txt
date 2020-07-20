@@ -5,7 +5,7 @@ Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
 Tested up to: 5.3.0
 Requires PHP: 7.0
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,6 +36,9 @@ Check out the source code [on Github!](https://github.com/yeah8000/acf-autosize)
 Install and activate like any other wordpress plugin
 
 == Changelog ==
+= 2.0.2 =
+* Fix: resize when repeater / flex / tabs are uncollapsed
+
 = 2.0.0 =
 * Enable by default
 * Add `acf-autosize/enabledByDefault`-filter to enable the inverse behaviour (as in pre 2.0.0)
