@@ -1,6 +1,6 @@
 {
   "name": "acf-autosize",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields",
   "main": "src/index.js",
   "scripts": {
