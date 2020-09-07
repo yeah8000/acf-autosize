@@ -18,7 +18,7 @@ class ACFAutosize
 	public function __construct()
 	{
 		// enqueue javascript
-		add_action('acf/input/admin_footer', array($this, "enqueue"));
+		add_action('admin_footer', array($this, "enqueue"));
 	}
 
 	public function enqueue()

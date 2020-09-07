@@ -11,8 +11,8 @@ class ACFAutosizeMu {
 
 	public function __construct() {
 		// echo javascript
-		add_action("acf/input/admin_footer", array($this, "echoJs"));
-		add_action("acf/input/admin_head", array($this, "echoCss"));
+		add_action("admin_footer", array($this, "echoJs"));
+		add_action("admin_head", array($this, "echoCss"));
 	}
 
 	public function echoJs() {
