@@ -12,11 +12,11 @@ const autosize = require('autosize');
 	autosize(textareas)
 
 	// auto size text-areas on various occasions
-	acf.add_action('ready load', () => {
+	acf.addAction('ready load resize', () => {
 		autosize.update(textareas)
 	})
 
-	acf.add_action('show_field', () => {
+	acf.addAction('show_field', () => {
 		// wait a moment until the field is really open
 		setTimeout(() => {
 			autosize.update(textareas)
@@ -24,7 +24,7 @@ const autosize = require('autosize');
 	})
 
 	// init autosize on newly created repeater/flexcontent fields
-	acf.add_action('append', function ($el) {
+	acf.addAction('append', function ($el) {
 		let textarea = null
 		if (ACFAutosize.enabledByDefault) {
 			textarea = $el.find('.acf-field:not(.no-autosize) textarea')
