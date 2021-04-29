@@ -3,9 +3,9 @@ Contributors: yeah8000
 Donate link: https://yeah.de/
 Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
-Tested up to: 5.5.1
+Tested up to: 5.7.1
 Requires PHP: 7.0
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,6 +36,9 @@ Check out the source code [on Github!](https://github.com/yeah8000/acf-autosize)
 Install and activate like any other wordpress plugin
 
 == Changelog ==
+= 2.0.8 =
+* Dependency Updates and 5.7.1 compability tests
+
 = 2.0.7 =
 * Fix: make it work with acf 5.9.0
 
