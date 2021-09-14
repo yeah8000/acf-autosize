@@ -8,16 +8,19 @@ const autosize = require('autosize');
 	 * @return void
 	 */
 	function editorAutoHeight (editor, minHeight = 200) {
-		let height =
-			$(editor.iframeElement)
+		// do not resize on fullscreen editors
+		if (!editor.plugins.fullscreen.isFullscreen()) {
+			let height = $(editor.iframeElement)
 				.contents()
 				.find('html')
 				.height() || minHeight
-		height = height < minHeight ? minHeight : height
-		$(editor.iframeElement).css({
-			height: height,
-			minHeight: minHeight
-		})
+
+			height = height < minHeight ? minHeight : height
+			$(editor.iframeElement).css({
+				height: height,
+				minHeight: minHeight
+			})
+		}
 	}
 
 	/**
@@ -68,6 +71,9 @@ const autosize = require('autosize');
 		 */
 		ed.on('init', setAutoHeight)
 		ed.on('change', setAutoHeight)
+		ed.on('FullscreenStateChanged', function (e) {
+			setAutoHeight()
+		})
 
 		acf.addAction('load resize', () => {
 			setAutoHeight()

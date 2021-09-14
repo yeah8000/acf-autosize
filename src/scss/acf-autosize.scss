@@ -1,15 +1,15 @@
-@mixin sticky-toolbar(){
+@mixin sticky-toolbar() {
 	position: -webkit-sticky;
-	position: "sticky";
+	position: 'sticky';
 	top: 46px;
 
-	@media(min-width: 783px){
+	@media (min-width: 783px) {
 		top: 30px;
 	}
 }
 
-body.acf-autosize-enabled{
-	.acf-field:not(.no-autosize) .mce-top-part {
+body.acf-autosize-enabled {
+	.acf-field:not(.no-autosize) .mce-tinymce:not(.mce-fullscreen) .mce-top-part {
 		@include sticky-toolbar();
 	}
 
@@ -18,13 +18,10 @@ body.acf-autosize-enabled{
 	}
 }
 
-.acf-field.autosize .mce-top-part {
+.acf-field.autosize .mce-tinymce:not(.mce-fullscreen) .mce-top-part {
 	@include sticky-toolbar();
 }
 
-.block-editor .acf-field.autosize .mce-top-part{
+.block-editor .acf-field.autosize .mce-top-part {
 	top: 0;
 }
-
-
-
