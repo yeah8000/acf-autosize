@@ -3,9 +3,9 @@ Contributors: yeah8000
 Donate link: https://yeah.de/
 Tags: acf, wysiwyg, autoresize, autosize
 Requires at least: 3.6.0
-Tested up to: 5.81.1
+Tested up to: 5.8.1
 Requires PHP: 7.0
-Stable tag: 2.0.10
+Stable tag: 2.0.11
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,6 +16,9 @@ A wordpress plugin to automatically resize and improve upon wysiwyg and textarea
 ## Features
 - Automatically resize wysiwyg and textarea fields in ACF groups
 - Add `data-wysiwyg-slug='my-wysiwyg-field'` to the body in tinymce iframes, so you can style those iframe's contents using editor-styles.
+
+## Limitations
+- Currently does not work on fields inside of ACF Gutenberg Blocks.
 
 ## Usage
 - Install and activate like any other wordpress plugin
