@@ -10,9 +10,26 @@ namespace YeahACFAutosize;
 class ACFAutosizeMu {
 
 	public function __construct() {
-		// echo javascript
-		add_action("admin_footer", array($this, "echoJs"));
-		add_action("admin_head", array($this, "echoCss"));
+		add_action('init', array($this, "enqueues"));
+	}
+
+	public function enqueues()
+	{
+		// echo scripts & styles in backend
+		add_action('admin_head', array($this, "echoCss"));
+		add_action('admin_footer', array($this, "echoJs"));
+
+		// echo scripts & styles in frontend
+		if (apply_filters('acf-autosize/enabledInFrontend', false)) {
+			add_action('wp_head', array($this, "echoCss"));
+			add_action('wp_footer', array($this, "echoJs"));
+		}
+	}
+
+	public function echoCss() {
+		echo "<style>";
+		echo "{{{ autosizeCss }}}";
+		echo "</style>";
 	}
 
 	public function echoJs() {
@@ -27,11 +44,7 @@ class ACFAutosizeMu {
 		echo "</script>";
 	}
 
-	public function echoCss() {
-		echo "<style>";
-		echo "{{{ autosizeCss }}}";
-		echo "</style>";
-	}
+	
 }
 
 new ACFAutosizeMu();

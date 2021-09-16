@@ -3,7 +3,7 @@
 Plugin Name: ACF Autosize
 Plugin URI: https://wordpress.org/plugins/acf-autosize/
 Description: A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields.
-Version: 2.0.11
+Version: 2.0.12
 Author: Yeah GbR
 Author URI: https://yeah.de
 */
@@ -17,9 +17,26 @@ namespace YeahACFAutosize;
 class ACFAutosizeMu {
 
 	public function __construct() {
-		// echo javascript
-		add_action("admin_footer", array($this, "echoJs"));
-		add_action("admin_head", array($this, "echoCss"));
+		add_action('init', array($this, "enqueues"));
+	}
+
+	public function enqueues()
+	{
+		// echo scripts & styles in backend
+		add_action('admin_head', array($this, "echoCss"));
+		add_action('admin_footer', array($this, "echoJs"));
+
+		// echo scripts & styles in frontend
+		if (apply_filters('acf-autosize/enabledInFrontend', false)) {
+			add_action('wp_head', array($this, "echoCss"));
+			add_action('wp_footer', array($this, "echoJs"));
+		}
+	}
+
+	public function echoCss() {
+		echo "<style>";
+		echo "body.acf-autosize-enabled .acf-field:not(.no-autosize) .mce-tinymce:not(.mce-fullscreen) .mce-top-part{position:sticky;top:46px}@media (min-width:783px){body.acf-autosize-enabled .acf-field:not(.no-autosize) .mce-tinymce:not(.mce-fullscreen) .mce-top-part{top:30px}}body.acf-autosize-enabled .block-editor .acf-field:not(.no-autosize) .mce-top-part{top:0}.acf-field.autosize .mce-tinymce:not(.mce-fullscreen) .mce-top-part{position:sticky;top:46px}@media (min-width:783px){.acf-field.autosize .mce-tinymce:not(.mce-fullscreen) .mce-top-part{top:30px}}.block-editor .acf-field.autosize .mce-top-part{top:0}";
+		echo "</style>";
 	}
 
 	public function echoJs() {
@@ -34,11 +51,7 @@ class ACFAutosizeMu {
 		echo "</script>";
 	}
 
-	public function echoCss() {
-		echo "<style>";
-		echo "body.acf-autosize-enabled .acf-field:not(.no-autosize) .mce-tinymce:not(.mce-fullscreen) .mce-top-part{position:sticky;top:46px}@media (min-width:783px){body.acf-autosize-enabled .acf-field:not(.no-autosize) .mce-tinymce:not(.mce-fullscreen) .mce-top-part{top:30px}}body.acf-autosize-enabled .block-editor .acf-field:not(.no-autosize) .mce-top-part{top:0}.acf-field.autosize .mce-tinymce:not(.mce-fullscreen) .mce-top-part{position:sticky;top:46px}@media (min-width:783px){.acf-field.autosize .mce-tinymce:not(.mce-fullscreen) .mce-top-part{top:30px}}.block-editor .acf-field.autosize .mce-top-part{top:0}";
-		echo "</style>";
-	}
+	
 }
 
 new ACFAutosizeMu();

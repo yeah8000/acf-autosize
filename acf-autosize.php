@@ -3,7 +3,7 @@
 Plugin Name: ACF Autosize
 Plugin URI: https://wordpress.org/plugins/acf-autosize/
 Description: A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields.
-Version: 2.0.11
+Version: 2.0.12
 Author: Yeah GbR
 Author URI: https://yeah.de
  */
@@ -13,15 +13,33 @@ namespace YeahACFAutosize;
 class ACFAutosize
 {
 
-	public $version = "2.0.11";
+	public $version = "2.0.12";
 
 	public function __construct()
 	{
-		// enqueue javascript
-		add_action('admin_footer', array($this, "enqueue"));
+		add_action('init', array($this, "enqueues"));
 	}
 
-	public function enqueue()
+	public function enqueues()
+	{
+		// enqueue scripts & styles in backend
+		add_action('admin_head', array($this, "enqueueCSS"));
+		add_action('admin_footer', array($this, "enqueueJS"));
+
+		// enqueue scripts & styles in frontend
+		if (apply_filters('acf-autosize/enabledInFrontend', false)) {
+			add_action('wp_head', array($this, "enqueueCSS"));
+			add_action('wp_footer', array($this, "enqueueJS"));
+		}
+	}
+
+	public function enqueueCSS()
+	{
+		wp_register_style('acf-autosize-css', plugins_url("public/acf-autosize.css", __FILE__), false, $this->version);
+		wp_enqueue_style('acf-autosize-css');
+	}
+
+	public function enqueueJS()
 	{
 		wp_register_script('acf-autosize-js', plugins_url("public/acf-autosize.js", __FILE__), false, $this->version);
 		wp_enqueue_script('acf-autosize-js');
@@ -36,9 +54,6 @@ class ACFAutosize
 		);
 
 		wp_localize_script('acf-autosize-js', 'ACFAutosize', $js_settings);
-
-		wp_register_style('acf-autosize-css', plugins_url("public/acf-autosize.css", __FILE__), false, $this->version);
-		wp_enqueue_style('acf-autosize-css');
 	}
 }
 
