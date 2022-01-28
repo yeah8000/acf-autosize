@@ -1,6 +1,5 @@
 @mixin sticky-toolbar() {
-	position: -webkit-sticky;
-	position: 'sticky';
+	position: sticky;
 	top: 46px;
 
 	@media (min-width: 783px) {
@@ -13,7 +12,7 @@ body.acf-autosize-enabled {
 		@include sticky-toolbar();
 	}
 
-	.block-editor .acf-field:not(.no-autosize) .mce-top-part {
+	.block-editor .acf-field:not(.no-autosize) .mce-tinymce:not(.mce-fullscreen) .mce-top-part {
 		top: 0;
 	}
 }

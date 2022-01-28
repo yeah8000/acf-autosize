@@ -75,7 +75,10 @@ const autosize = require('autosize');
 			setAutoHeight()
 		})
 
-		acf.addAction('load resize', () => {
+		acf.addAction('load', () => {
+			setAutoHeight()
+		})
+		acf.addAction('resize', () => {
 			setAutoHeight()
 		})
 
