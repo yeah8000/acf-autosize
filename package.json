@@ -1,30 +1,54 @@
 {
-  "name": "acf-autosize",
-  "version": "2.0.13",
-  "description": "A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields",
-  "main": "src/index.js",
-  "scripts": {
-    "esw": "esw --fix -w src/js .scripts",
-    "dist": "gulp dist --env dist; npm run mu",
-    "dev": "gulp",
-    "mu": "node ./.scripts/mu.js > ./mu-plugin/acf-autosize-mu.php",
-    "deploy": "npm run dist; npm run publish",
-    "publish": "./.scripts/deploy.sh"
-  },
-  "keywords": [],
-  "author": "Yeah GbR",
-  "license": "MIT",
-  "dependencies": {
-    "autosize": "^4.0.4",
-    "handlebars": "^4.7.7"
-  },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-standard": "^4.1.0",
-    "mj-gulp-workflow": "^2.3.4"
-  }
+	"name": "acf-autosize",
+	"version": "2.0.14",
+	"description": "A wordpress plugin to automatically resize and improve upon wysiwyg and textarea fields in Advanced Custom Fields",
+	"main": "src/index.js",
+	"scripts": {
+		"dist": "webpack --mode=production; npm run mu",
+		"dev": "webpack --watch --mode=development",
+		"mu": "node ./.scripts/mu.js > ./mu-plugin/acf-autosize-mu.php",
+		"deploy": "npm run dist; npm run publish",
+		"publish": "./.scripts/deploy.sh"
+	},
+	"keywords": [],
+	"author": "Yeah GbR",
+	"license": "MIT",
+	"dependencies": {
+		"autosize": "^4.0.4",
+		"handlebars": "^4.7.7"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.7.0",
+		"@typescript-eslint/parser": "^5.7.0",
+		"autoprefixer": "^10.4.2",
+		"copy-webpack-plugin": "^10.2.0",
+		"css-loader": "^6.5.1",
+		"esbuild-loader": "^2.17.0",
+		"eslint": "^7.32.0",
+		"eslint-config-standard": "^16.0.3",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^5.2.0",
+		"fast-glob": "^3.2.7",
+		"mini-css-extract-plugin": "^2.4.5",
+		"node-sass": "^7.0.1",
+		"postcss-loader": "^6.2.1",
+		"sass-loader": "^12.4.0",
+		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.4",
+		"webpack": "^5.65.0",
+		"webpack-cli": "^4.9.1",
+		"webpack-notifier": "^1.15.0",
+		"webpack-remove-empty-scripts": "^0.7.2"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {}
+		}
+	},
+	"browserslist": [
+		"last 2 version",
+		"not dead",
+		"iOS >= 9"
+	]
 }
